@@ -1,0 +1,7 @@
+# comentários
+
+"""
+
+docstring
+
+"""
