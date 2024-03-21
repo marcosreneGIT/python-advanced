@@ -7,11 +7,12 @@ numero_tentativas = 0
 
 while True:
     letra_digitada = input('\nDigite uma letra: ')
-    numero_tentativas += 1
-
+   
     if len(letra_digitada) > 1:
         print('\nDigite apenas uma letra.')
         continue
+
+    numero_tentativas += 1
 
     if letra_digitada in palavra_secreta:
         letras_acertadas += letra_digitada
