@@ -39,7 +39,7 @@ while i < len(jogo):
         resposta_int = int(resposta_str)
         resposta_correta = jogo[i][0]['Opções'][resposta_int - 1] == jogo[i][0]['Resposta']
 
-        if  resposta_correta:
+        if resposta_correta:
             print('\nAcertou!\n')
             contador_acertos += 1
 
