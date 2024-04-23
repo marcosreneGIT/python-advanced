@@ -16,7 +16,6 @@ Requisitos:
 def numero_duplicado(lista):
     
     checar_duplicagem = set()
-    checar_duplicagem.clear()
 
     primeiro_duplicado = 0
     
