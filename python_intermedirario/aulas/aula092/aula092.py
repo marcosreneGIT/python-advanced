@@ -8,6 +8,6 @@
 # O python conhece todos os módulos e pacotes presentes
 # nos caminhos de sys.path
 
-import modulo092
+import python_intermedirario.aulas.aula092.modulo092 as modulo092
 
 print('Este módulo se chama', __name__)
