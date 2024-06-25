@@ -4,7 +4,7 @@
 # porém, são funções anônimas, que contém apenas uma linha. 
 # ou seja, tudo deve ser contido dentro de uma única expressão.
 
-lista = [
+lista_0 = [
     {'nome': 'Luiz', 'sobrenome': 'Miranda'},
     {'nome': 'Maria', 'sobrenome': 'Oliveira'},
     {'nome': 'Daniel', 'sobrenome': 'Silva'},
@@ -19,8 +19,8 @@ def exibir(lista):
     print()
 
 
-l1 = sorted(lista, key=lambda item: item['nome'])
-l2 = sorted(lista, key=lambda item: item['sobrenome'])
+lista_1 = sorted(lista_0, key=lambda item : item['nome'])
+lista_2 = sorted(lista_0, key=lambda item : item['sobrenome'])
 
-exibir(l1)
-exibir(l2)
+exibir(lista_1)
+exibir(lista_2)
