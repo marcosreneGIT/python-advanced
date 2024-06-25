@@ -13,8 +13,13 @@ def executa(funcao, *args):
 
 
 # duplica = cria_multiplicador(2)
+
+soma = (lambda x, y : x + y)
+
+print(soma(2, 3))
+
 duplica = executa(
-    lambda m: lambda n: n * m,
+    lambda m : lambda n : n * m,
     2
 )
 print(duplica(2))
