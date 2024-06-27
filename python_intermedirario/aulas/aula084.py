@@ -16,3 +16,16 @@ while True:
 
     except StopIteration:
         break
+
+
+
+lista = [n for n in range(1000000)]
+generator = (n for n in range(1000000))
+
+# tamando em bits
+print(sys.getsizeof(lista))
+print(sys.getsizeof(generator))
+
+for n in generator:
+     print(n)
+     
