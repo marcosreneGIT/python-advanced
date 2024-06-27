@@ -1,15 +1,18 @@
 import sys
 
-# Generator expression, Iterables e Iterators em Python
-iterable = ['Eu', 'Tenho', '__iter__']
-iterator = iter(iterable)  # tem __iter__ e __next__
-lista = [n for n in range(1000000)]
-generator = (n for n in range(1000000))
+# generator expression, iterables e iterators em pyhton
 
-print(sys.getsizeof(lista))
-print(sys.getsizeof(generator))
+iterable = ['a', 'b', 'c', 'd'] 
 
-print(generator)
+iterator = iter(iterable) # < __iter__ e __next__
 
-# for n in generator:
-#     print(n)
+# print(next(iterator)) # a
+# print(next(iterator)) # b
+# print(next(iterator)) # c
+
+while True:
+    try:
+        print(next(iterator))
+
+    except StopIteration:
+        break
