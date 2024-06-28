@@ -1,39 +1,38 @@
-# Yield from
-def gen1():
-    print('COMECOU GEN1')
+# yield from
+
+def generator_1():
+    print('início_1')
+    yield 0
     yield 1
     yield 2
-    yield 3
-    print('ACABOU GEN1')
+    print('fim_1')
 
-
-def gen3():
-    print('COMECOU GEN3')
+def generator_3():
+    print('início_3')
     yield 10
     yield 20
     yield 30
-    print('ACABOU GEN3')
+    print('fim_3')
 
-
-def gen2(gen=None):
-    print('COMECOU GEN2')
+def generator_2(gen=None):
+    print('início_2')
     if gen is not None:
         yield from gen
+    yield 3
     yield 4
     yield 5
-    yield 6
-    print('ACABOU GEN2')
+    print('fim_2')
 
+gen_1 = generator_2(generator_1())
+gen_2 = generator_2(generator_3())
+gen_3 = generator_2()
 
-g1 = gen2(gen1())
-g2 = gen2(gen3())
-g3 = gen2()
-for numero in g1:
-    print(numero)
+for num in gen_1:
+    print(num)
 print()
-for numero in g2:
-    print(numero)
+for num in gen_2:
+    print(num)
 print()
-for numero in g3:
-    print(numero)
+for num in gen_3:
+    print(num)
 print()
