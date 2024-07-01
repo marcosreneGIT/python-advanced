@@ -1,22 +1,26 @@
-# (Parte1) try e except para tratar exceções
+# parte1 - try e except para tratar exceções
+
 # a = 18
 # b = 0
-# c = a / b
+# c = a / 
 
 try:
     a = 18
     b = 0
-    # print(b[0])
-    print('Linha 1'[1000])
-    c = a / b
-    print('Linha 2')
-except ZeroDivisionError:
-    print('Dividiu por zero.')
-except NameError:
-    print('Nome b não está definido')
-except (TypeError, IndexError):
-    print('TypeError + IndexError')
-except Exception:
-    print('ERRO DESCONHECIDO.')
 
-print('CONTINUAR')
+    c = a / b
+
+except ZeroDivisionError:
+    print('Não é possivel se dividir por 0 (zero).')
+
+except NameError:
+    print('Variável não está definada.')
+
+except (TypeError, IndexError, SyntaxError):
+    print('Tipo de dado invalido.')
+
+except Exception:
+    print('Um erro desconhecido ocorreu.')
+
+else:
+    print(f'O resultado da divisião é: {c}')
