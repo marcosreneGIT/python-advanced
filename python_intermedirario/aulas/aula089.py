@@ -1,17 +1,26 @@
 # try, except, else e finally
 # https://docs.python.org/pt-br/3/library/exceptions.html#built-in-exceptions
 try:
-    print('ABRIR ARQUIVO')
-    8/0
+    print('Open File')
+    a = 8
+    b = 8
+    c = a / b
 except ZeroDivisionError as e:
     print(e.__class__.__name__)
     print(e)
-    print('DIVIDIU ZERO')
-except IndexError as error:
-    print('IndexError')
-except (NameError, ImportError):
-    print('NameError, ImportError')
+    print('Não é possivel dividir por zero (0).')
+except IndexError as e:
+    print(e.__class__.__name__)
+    print('Indice indisponível.')
+except (NameError, ImportError) as e:
+    print(e.__class__.__name__)
+    
+    if e.__class__.__name__ == 'NameError':
+        print('Nome errado.')
+
+    elif e.__class__.__name__ == 'ImportError':
+        print('Importe mal sucedido.')
 else:
-    print('Não deu erro')
+    print('Nenhum erro encontrado.')
 finally:
-    print('FECHAR ARQUIVO')
+    print('Close File')
