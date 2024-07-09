@@ -1,13 +1,13 @@
-# Modularização - Entendendo os seus próprios módulos Python
-# O primeiro módulo executado chama-se __main__
-# Você pode importar outro módulo inteiro ou parte do módulo
-# O python conhece a pasta onde o __main__ está e as pastas
-# abaixo dele.
-# Ele não reconhece pastas e módulos acima do __main__ por
-# padrão
-# O python conhece todos os módulos e pacotes presentes
-# nos caminhos de sys.path
+# modularização - entendendo os seus próprios módulos Python
 
+# o primeiro módulo executado chama-se __main__
+print('Este módulo se chama', __name__)
+
+# você pode importar outro módulo inteiro ou parte do módulo
 import python_intermedirario.aulas.aula092.modulo092 as modulo092
 
-print('Este módulo se chama', __name__)
+# o python conhece a pasta onde o __main__ está e as pastas abaixo dele.
+# ele não reconhece pastas e módulos acima do __main__ por padrão
+# o python conhece todos os módulos e pacotes presentes nos caminhos de sys.path
+
+
