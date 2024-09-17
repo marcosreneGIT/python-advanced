@@ -14,6 +14,7 @@ lista_soma = [2, 4, 6, 8]
 
 lista_0 = [1, 2, 3, 4, 5, 6, 7]
 lista_1 = [1, 2, 3, 4]
+lista_3 = [x + y for x, y in zip(lista_0, lista_1)]
 
 
 def somador_listas(lista_x=[0], lista_y=[0]):
@@ -37,6 +38,6 @@ lista_somada = somador_listas(lista_0, lista_1)
 lista_2 = lista_somada()
 
 print(lista_2)
-
+print(lista_3)
 
 
