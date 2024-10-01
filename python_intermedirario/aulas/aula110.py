@@ -19,6 +19,13 @@
 # readlines (ler linhas)
 
 
+# módulo os:
+
+# os.remove ou unlink - apaga o arquivo
+# os.rename - troca o nome ou move o arquivo
+
+import os
+
 caminho = 'aula110.txt'
 
 with open(caminho, 'w+', encoding= 'utf-8') as arquivo:
@@ -51,3 +58,6 @@ print('Arquivo fechado.')
 
 with open(caminho, 'r') as arquivo:
     print(arquivo.read())
+
+os.rename(caminho, 'aula111.py')
+os.remove(caminho) # ou unlink
