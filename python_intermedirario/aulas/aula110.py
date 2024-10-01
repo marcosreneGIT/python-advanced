@@ -21,9 +21,10 @@
 
 caminho = 'aula110.txt'
 
-with open(caminho, 'w+') as arquivo:
+with open(caminho, 'w+', encoding= 'utf-8') as arquivo:
     print('Arquivo aberto.')
 
+    arquivo.write('Atenção\n')
     arquivo.write('Linha A\n')
     arquivo.write('Linha B\n')
     arquivo.write('Linha C\n')
