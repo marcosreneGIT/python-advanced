@@ -1,0 +1,22 @@
+{
+  "nome": "Marcos Ren\u00ea",
+  "sobrenome": "Gomes",
+  "enderecos": [
+    {
+      "rua ": "R1",
+      "numero": 12
+    },
+    {
+      "rua": "R2",
+      "numero": 34
+    }
+  ],
+  "altura": 1.9,
+  "numeros_da_sorte": [
+    0,
+    4,
+    8
+  ],
+  "dev": true,
+  "nada": null
+}
