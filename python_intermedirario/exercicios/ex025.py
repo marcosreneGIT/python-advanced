@@ -31,7 +31,7 @@ def confirmar_adicao(lista):
         adicao = input('\nInforme a tarefa: ').capitalize()
         adicionar_tarefa(lista, adicao)
         while True:
-            confirmacao = input('\nDeseja adicionar outra tarefa a sua lista? [S/N]: ')
+            confirmacao = input('\nDeseja adicionar outra tarefa a sua lista? [S/N]: ').upper()
             if   confirmacao == 'N':
                 break
             elif confirmacao == 'S':
@@ -44,48 +44,62 @@ def confirmar_adicao(lista):
 
 
 def remover_tarefa(lista_remover, lista_resevar):
-    confirmacao = input(f'\nDeseja mesmo remover "{lista_remover[-1]}" da sua lista de tarefas? [S/N]: ').upper()
+    if len(lista_remover) > 0:
+        confirmacao = input(f'\nDeseja mesmo remover "{lista_remover[-1]}" da sua lista de tarefas? [S/N]: ').upper()
 
-    if confirmacao == 'S':
-        lista = lista_resevar.append(lista_remover[-1])
-        lista_remover.pop()
-        return lista
+        if confirmacao == 'S':
+            lista = lista_resevar.append(lista_remover[-1])
+            lista_remover.pop()
+            return lista
 
-    elif confirmacao == 'N':
-        segunda_confiramacao = input('Deseja remover alguma outra tarefa da sua lista [S/N]: ').upper()
+        elif confirmacao == 'N':
+            if len(lista_remover) > 1:
+                segunda_confiramacao = input('\nDeseja remover alguma outra tarefa da sua lista?  [S/N]: ').upper()
 
-        if segunda_confiramacao == 'S':
+                if segunda_confiramacao == 'S':
 
-            for i in range(len(lista_remover)-1):
-                terceira_confirmacao = input(f'Deseja remover {lista_remover[i]} [S/N]: ')
+                    for i in range(len(lista_remover) -2, -1, -1):
+                        terceira_confirmacao = input(f'\nDeseja remover "{lista_remover[i]}" da sua lista de tarefas? [S/N]: ').upper()
 
-                if i == len(lista_remover - 1):
-                    print('Sua lista chegou ao fim')
-                    continue
+                        if terceira_confirmacao == 'S':
+                            lista_resevar.append(lista_remover[i])
+                            lista_remover.pop(i)
+                            continue
+                        
+                        elif terceira_confirmacao == 'N':
+                            continue
 
-                if terceira_confirmacao == 'S':
-                    lista = lista_resevar.append(lista_remover[i])
-                    lista_remover.pop()
-
-                elif terceira_confirmacao == 'N':
-                    continue
-
-                else:
-                    print('Opção invalida. Tente novamente!')
-                
+                        else:
+                            print('Opção invalida. Tente novamente!')
+                    print('\nSua lista chegou ao fim.')
+    else: 
+        print('\nNão há nada a ser removido.')
+                        
 
 def desfazer_remover(lista_desfazer, lista_adicionar):
-    lista = lista_adicionar.append(lista_desfazer[-1])
-    lista_desfazer.pop()
+    if len(lista_adicionar) > 0:
+        tarefa = lista_desfazer[-1]
 
-    return lista
+        lista = lista_adicionar.append(tarefa)
+        lista_desfazer.pop()
 
+        print(f'{tarefa} retornou a sua lista de tarefas.')
+
+        return lista
+
+    else:
+        print('\nNão há nenhuma tarefa removida!')
+
+    
 
 def listar_lista(lista):
     print('')
-    for item in lista:
+    if len(lista) > 0:
+        for item in lista:
 
-        print('-', item)
+            print('-', item)
+    else:
+        print('Não há nada para se listar.')
 
 
 def menu(lista_adicionar, lista_resevar, opcao):
@@ -119,4 +133,4 @@ while True:
     except ValueError:
         print('\nOpção inválida. Tente novamente!')
 
-
+        
