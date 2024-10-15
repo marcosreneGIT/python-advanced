@@ -77,7 +77,7 @@ def remover_tarefa(lista_remover, lista_resevar):
                         
 
 def desfazer_remover(lista_desfazer, lista_adicionar):
-    if len(lista_adicionar) > 0:
+    if len(lista_desfazer) > 0:
         tarefa = lista_desfazer[-1]
 
         lista = lista_adicionar.append(tarefa)
