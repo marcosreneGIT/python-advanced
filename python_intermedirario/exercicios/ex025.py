@@ -13,11 +13,10 @@
 
 # música para codar: Everybody wants to rule the world - Tears for fears
 
-
-lista_tarefas = []
-lista_reseva  = []
-
 # menu - opçoes: adcionar, desfazer e refazer
+
+import json
+
 
 def adicionar_tarefa(lista_adicionar, tarefa):
     lista = lista_adicionar.append(tarefa)
@@ -117,6 +116,29 @@ def menu(lista_adicionar, lista_resevar, opcao):
         listar_lista(lista_adicionar)
 
 
+def ler(tarefa, caminho):
+    dados = []
+    try:
+        with open(caminho, 'r', encoding='utf8') as arquivo:
+            dados = json.load(arquivo)
+    except FileNotFoundError:
+        salvar(tarefa, caminho)
+
+    return dados
+
+
+
+def salvar(tarefa, caminho):
+    dados = tarefa
+    with open(caminho, 'w', encoding='utf8') as arquivo:
+        dados = json.dump(tarefa, arquivo, indent = 2, ensure_ascii=False)
+    
+    return dados
+
+
+CAMINHO = 'ex026.json'
+lista_tarefas = ler([], CAMINHO)
+lista_reseva  = []
 
 while True:
     print('\nComandos: [1] Adicionar | [2] Remover | [3] Desfazer | [4] Listar | [0] Sair')
@@ -125,8 +147,10 @@ while True:
         
         if   opcao == 0:
             break
+
         elif 1 <= opcao <= 4:
             menu(lista_adicionar=lista_tarefas, lista_resevar= lista_reseva, opcao=opcao)
+        
         else:
             print('\nOpção não disponível. Tente novamente!')
 
