@@ -1,4 +1,10 @@
-{
-  "nome": "Marcos",
-  "idade": 21
-}
+[
+  {
+    "nome": "Marcos",
+    "idade": 21
+  },
+  {
+    "nome": "Maria",
+    "idade": 33
+  }
+]
