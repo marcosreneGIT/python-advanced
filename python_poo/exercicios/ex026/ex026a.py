@@ -4,6 +4,10 @@
 # faça em arquivos separados.
 import json
 
+
+PATH = 'C:\\Users\\marco\\Documents\\Estudos\\back-end\\python_2\\python_poo\\exercicios\\ex026\\ex026.json'
+
+
 class Pessoa:
     def __init__(self, nome, idade):
         self.nome = nome
@@ -11,9 +15,9 @@ class Pessoa:
     
 
 pessoa_0 = Pessoa('Marcos', 21)
-dados_pessoais = vars(pessoa_0)
+pessoa_1 = Pessoa('Maria', 33)
 
-path = 'C:\\Users\\marco\\Documents\\Estudos\\back-end\\python_2\\python_poo\\exercicios\\ex026\\ex026.json'
+data = [vars(pessoa_0), vars(pessoa_1)]
 
-with open(path, 'w', encoding='utf8') as file:
-    json.dump(dados_pessoais, file, indent=2)
+with open(PATH, 'w', encoding='utf8') as file:
+    json.dump(data, file, indent=2)
