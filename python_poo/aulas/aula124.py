@@ -54,4 +54,4 @@ class Connection:
 
 # @staticmethod
 
-print(Connection.log('Você está logado.'))
+# print(Connection.log('Você está logado.'))
