@@ -42,5 +42,5 @@ t.public_method()
 print(t._protected)
 t._protected_method()
 
-# print(t.__private) # sem acesso (name mangling)
-t._Test__private_method()
+print(t.__private) # sem acesso (name mangling)
+t._Test__private_method() # _Test no inicio é uma maneira de se ter acesso (o que não é aconselhado).
