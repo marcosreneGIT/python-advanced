@@ -5,7 +5,7 @@
 # os objetos podem viver separadamente, mas pode se tratar de uma relação onde um objeto precisa de outro para fazer determinada tarefa.
 # (existem controvérsias sobre as definições de agregação).
 
-class Carrinho:
+class CarrinhoDeCompras:
     def __init__(self):
         self._produtos = []
 
@@ -42,7 +42,7 @@ class Produto:
     def preco(self, value):
         self._preco = value
 
-carrinho = Carrinho()
+carrinho =  CarrinhoDeCompras()
 produto_0, produto_1 = Produto('Caneta', 1.20), Produto('Camisa', 20)
 
 carrinho.inserir_produto(produto_0, produto_1)
