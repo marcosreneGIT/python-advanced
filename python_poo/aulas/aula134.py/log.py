@@ -1,16 +1,29 @@
 # abstração
 
 class Log:
-    def log(self, msg):
+    def _log(self, msg):
         raise NotImplementedError('Implemente o método log.')
+
+    def log_error(self, msg):
+        return self._log(f'Error! {msg}')
+
+    def log_succes(self, msg):
+        return self._log(f'Succes! {msg}')
     
 
 class LogFileMixin(Log):
-    def log(self, msg):
-        return msg
+    def _log(self, msg):
+        return f'Saída: {msg} ({self.__class__.__name__}).'
 
+
+class LogPrintMixin(Log):
+    def _log(self, msg):
+        print(f'Saída: {msg} ({self.__class__.__name__}).')
+    
 
 if __name__ == '__main__':
-    l = LogFileMixin()
-    print(l.log('Exemplo de mensagem.'))
+    l = LogPrintMixin()
+    l.log_error('Exemplo de mensagem.')
+    l.log_succes('Exemplo de mensagem.')
     
+
