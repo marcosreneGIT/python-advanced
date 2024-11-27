@@ -1,11 +1,14 @@
 # abstração
+from pathlib import Path
+
+LOG_FILE = Path(__file__).parent
 
 class Log:
     def _log(self, msg):
         raise NotImplementedError('Implemente o método log.')
 
     def log_error(self, msg):
-        return self._log(f'Error! {msg}')
+        return self._log(f'Error! {msg}' )
 
     def log_succes(self, msg):
         return self._log(f'Succes! {msg}')
@@ -23,7 +26,6 @@ class LogPrintMixin(Log):
 
 if __name__ == '__main__':
     l = LogPrintMixin()
-    l.log_error('Exemplo de mensagem.')
+    l.log_error ('Exemplo de mensagem.')
     l.log_succes('Exemplo de mensagem.')
     
-

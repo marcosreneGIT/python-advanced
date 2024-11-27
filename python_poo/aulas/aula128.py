@@ -1,6 +1,6 @@
 # relações entre classes: associação, agregação e composição
 
-# associação é um tipo de relação onde os objetos estão ligados dentro do sistema.essa é a relação mais comum entre objetos e tem subconjuntos como agregação e composição (que veremos depois).
+# associação é um tipo de relação onde os objetos estão ligados dentro do sistema.essa é a relação mais comum entre objetos e tem subconjuntos como agregação e composição (que veremos depois). #D19A66
 # geralmente, temos uma associação quando um objeto tem  um atributo que referencia outro objeto. a associação não especifica como um objeto controla o ciclo de vida de outro objeto.
 
 class Escritor:
@@ -13,7 +13,7 @@ class Escritor:
         return self._ferramenta
     
     @ferramenta.setter
-    def ferramenta(self, ferramenta):
+    def ferramenta(self, ferramenta): 
         self._ferramenta = ferramenta
 
     def trabalhar(self):

@@ -1,5 +1,5 @@
 class Cameras:
-    def __init__(self, nome, filmando=False):
+    def __init__(self, nome, filmando = False):
         self.nome = nome
         self.filmando = filmando
 

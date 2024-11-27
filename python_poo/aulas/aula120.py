@@ -18,4 +18,3 @@ pessoa_1 = Pessoa('Ana', 19)
 print(Pessoa.ano_atual)
 print(pessoa_0.ano_nascimento())
 print(pessoa_1.ano_nascimento())
-
