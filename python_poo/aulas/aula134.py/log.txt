@@ -1,3 +1,17 @@
 Saída: Error! Exemplo de mensagem. (LogFileMixin).
 Saída: Succes! Exemplo de mensagem. (LogFileMixin).
 Saída: Error! Exemplo de mensagem. (LogFileMixin).
+Saída: Succes! Exemplo de mensagem. (LogFileMixin).
+Saída: Error! Exemplo de mensagem. (LogFileMixin).
+Saída: Succes! Exemplo de mensagem. (LogFileMixin).
+Saída: Error! Exemplo de mensagem. (LogFileMixin).
+Saída: Succes! Exemplo de mensagem. (LogFileMixin).
+Saída: Error! Exemplo de mensagem. (LogFileMixin).
+Saída: Succes! Exemplo de mensagem. (LogFileMixin).
+Saída: Error! Exemplo de mensagem. (LogFileMixin).
+Saída: Succes! Exemplo de mensagem. (LogFileMixin).
+Saída: Error! Exemplo de mensagem. (LogFileMixin).
+Saída: Succes! Exemplo de mensagem. (LogFileMixin).
+Saída: Error! Exemplo de mensagem. (LogFileMixin).
+Saída: Succes! Exemplo de mensagem. (LogFileMixin).
+Saída: Error! Exemplo de mensagem. (LogFileMixin).
