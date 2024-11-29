@@ -35,3 +35,5 @@ if __name__ == '__main__':
 
     log_p = LogPrintMixin()
     log_p.log_error ('Exemplo de mensagem.')
+
+    
