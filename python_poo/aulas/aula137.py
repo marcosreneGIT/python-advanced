@@ -26,7 +26,7 @@ class Notificacao(ABC):
         self.msg = msg
 
     @abstractmethod
-    def enviar(self) -> bool: ...
+    def enviar(self) -> bool: pass
 
 
 class NotificacaoEmail(Notificacao):
