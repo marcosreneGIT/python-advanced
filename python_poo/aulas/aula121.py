@@ -26,3 +26,4 @@ print(vars(pessoa_1))
 print(vars(pessoa_2))
 
 print(pessoa_0.ano_nascimento())
+
