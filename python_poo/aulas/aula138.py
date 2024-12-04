@@ -9,4 +9,22 @@
 
 # adicionando notas em exceções (3.11.0)
 
-class MyError(Exception): pass
+class FooError(Exception): pass
+
+
+class BarError(Exception): pass 
+
+
+def raise_():
+    exception_ = FooError('ErrorX', 'ErrorY')
+    raise exception_
+
+
+try:
+    raise_()
+
+except (FooError, BarError, ZeroDivisionError) as error:
+    print(f'Name: {error.__class__.__name__}\nError: {error}\n')
+    
+    exception_ = BarError('New Error')
+    raise exception_ from error
