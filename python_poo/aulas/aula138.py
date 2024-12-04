@@ -15,8 +15,10 @@ class FooError(Exception): pass
 class BarError(Exception): pass 
 
 
-def raise_():
+def raise_(): 
     exception_ = FooError('ErrorX', 'ErrorY')
+    exception_.add_note('Note')
+    
     raise exception_
 
 
@@ -27,4 +29,6 @@ except (FooError, BarError, ZeroDivisionError) as error:
     print(f'Name: {error.__class__.__name__}\nError: {error}\n')
     
     exception_ = BarError('New Error')
+    exception_.add_note  ('New Note' )
+    
     raise exception_ from error
