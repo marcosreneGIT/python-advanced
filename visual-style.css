@@ -1,0 +1,9 @@
+/* Substitui o '->' por '→' visualmente */
+.monaco-editor .token.operator {
+    font-family: "Arial", sans-serif; /* Pode alterar a fonte, se desejar */
+}
+
+/* Se você quiser algo mais específico */
+.monaco-editor .token.operator:contains("->") {
+    content: "→";
+}
