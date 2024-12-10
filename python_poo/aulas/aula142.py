@@ -28,9 +28,14 @@ class MyOpen:
         
         return self._file
     
-    def __exit__(self, class_, exception_, traceback,):
+    def __exit__(self, class_, exception_, traceback_):
         print('__exit__')
         self._file.close()
+        
+        # raise class_(*exception_.args).with_traceback(traceback_) # representação do erro e do que se pode fazer com ele.
+        # exception_.add_note('My note.')...
+        
+        # return True # se True for retornado siguinifica que o erro foi devidamente tratato.
         
     
 with MyOpen('aula142.txt', 'w') as file:
