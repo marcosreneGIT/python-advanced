@@ -1,7 +1,4 @@
-import modulo 
+import modulo_2
 
 
-print(dir(modulo))
-print(modulo.__name__, '\n')
-
-help(modulo)
+help(modulo_2)
