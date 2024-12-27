@@ -43,5 +43,7 @@ variavel_2 = 2
 variavel_3 = 3
 variavel_4 = 4
 
-
+class Foo:
+    def bar(self):
+        pass
 
