@@ -8,6 +8,11 @@ class Conta(abc.ABC):
         self.num_conta = num_conta
         self.saldo = saldo
         
+        print(f'AGÊNCIA: {self.agencia}\n'
+              f'NÚMERO DA CONTA: {self.num_conta}\n'
+              f'SALDO: R${self.saldo:.2f}\n')
+
+        
     def detalhes(self, msg=''):
         print(f'{msg}O seu saldo atual é de: R${self.saldo:.2f}.\n')
         
@@ -20,23 +25,29 @@ class Conta(abc.ABC):
     
 
 class ContaCorrente(Conta):
-    limite_extra = 200
+    LIMITE_EXTRA = 200
     
     def sacar(self, valor):
-        print(f'Valor que você deseja sacar R$:{valor:.2f}')
+        self.detalhes(f'Valor que você deseja sacar R${valor:.2f}\n'
+                      f'Você possui R${self.LIMITE_EXTRA:.2f} de limite extra.\n')
         
-        if valor <= (self.saldo + self.limite_extra):
-            print(f'Você sacou R${valor:.2f}'
-                  f' do seu saldo de R${self.saldo:.2f}')
+        if valor <= (self.saldo + self.LIMITE_EXTRA):
+            saldo_atual = self.saldo
             
             if valor >= self.saldo:
-                print('Você utilizou seu limite extra.\nSeu saldo atual é de '
-                      f'{(self.saldo + self.limite_extra) - valor:.2f}')
-                return
-            else:
-                print(f'Seu saldo atual é de R${self.saldo - valor:.2f}')
-                return
+                limite_ultizado = (valor - self.saldo) - self.LIMITE_EXTRA
+                self.saldo -=  (valor - limite_ultizado)
                 
+                return self.detalhes('Você utilizou seu limite extra.\n'
+                                     f'Você retirou R${valor:.2f} de '
+                                     f'R$ {saldo_atual:.2f}\n'
+                                     'Saque concluido com sucesso.\n')
+            else:
+                self.saldo -= valor
+                return self.detalhes(f'Você retirou R${valor:.2f} de ' 
+                                     f'R${saldo_atual:.2f}\n'
+                                     'Saque concluido com sucesso. \n')
+        
         return 'Você não possui saldo suficiente.'
                 
 
@@ -47,4 +58,4 @@ class ContaCorrente(Conta):
 pessoa = ContaCorrente(1, 10, 500)
 
 pessoa.depositar(500)
-print(pessoa.sacar(1200))
+print(pessoa.sacar(1100))
