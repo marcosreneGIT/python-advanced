@@ -35,8 +35,8 @@ class ContaCorrente(Conta):
             saldo_atual = self.saldo
             
             if valor >= self.saldo:
-                limite_ultizado = (valor - self.saldo) - self.LIMITE_EXTRA
-                self.saldo -=  (valor - limite_ultizado)
+                limite_ultizado = (valor - self.saldo)
+                self.saldo -=  valor - limite_ultizado
                 
                 return self.detalhes('Você utilizou seu limite extra.\n'
                                      f'Você retirou R${valor:.2f} de '
