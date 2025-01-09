@@ -42,22 +42,39 @@ class ContaCorrente(Conta):
                 return self.detalhes(f'Você retirou R$ {valor:.2f} de '
                                      f'R$ {saldo_atual:.2f}\n'
                                      'Você utilizou seu limite extra de '
-                                     f'{limite_ultizado}.\n'
+                                     f'{limite_ultizado:.2f}.\n'
                                      'Saque concluido com sucesso.\n')
             else:
                 self.saldo -= valor
                 return self.detalhes(f'Você retirou R$ {valor:.2f} de ' 
-                                     f'R${saldo_atual:.2f}\n'
+                                     f'R$ {saldo_atual:.2f}\n'
                                      'Saque concluido com sucesso. \n')
         
-        return 'Você não possui saldo suficiente.'
+        return f'Você não possui saldo suficiente.'
                 
 
-# class ContaPoupanca(Conta):
-#     def sacar(self, valor):
-#         ...
+class ContaPoupanca(Conta):
+    def sacar(self, valor):
+        saldo_atual = self.saldo
+        self.detalhes(f'\nValor que você deseja sacar R$ {valor:.2f}\n')
+         
+        if valor <= self.saldo:
+            self.saldo -= valor
+             
+            return self.detalhes(f'Você retirou R$ {valor:.2f} '
+                                  f'de R$ {saldo_atual:.2f}\n'
+                                  f'Saque concluido com sucesso. \n')
+        
+        return f'Você não possui saldo suficiente.'
+             
 
-pessoa = ContaCorrente(1, 10, 500)
+pessoa_0 = ContaCorrente(1, 10, 500)
+pessoa_1 = ContaPoupanca(2, 20, 200)
 
-pessoa.depositar(500)
-print(pessoa.sacar(1100))
+pessoa_0.depositar(500)
+pessoa_1.depositar(200)
+
+print(pessoa_0.sacar(1000))
+print(pessoa_1.sacar(400))
+
+
