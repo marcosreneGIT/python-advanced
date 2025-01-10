@@ -49,7 +49,7 @@ class ContaCorrente(Conta):
                                      f'R$ {saldo_atual:.2f}\n'
                                      'Saque concluido com sucesso. \n')
         
-        return f'Você não possui saldo suficiente.'
+        print('Não foi possível efetuar o saque.')
                 
 
 class ContaPoupanca(Conta):
@@ -65,6 +65,6 @@ class ContaPoupanca(Conta):
                           f'Saque concluido com sucesso. \n')
             return self.saldo
         
-        print('Não foi possuível efetuar o saque.')
+        print('Não foi possível efetuar o saque.')
         
              
