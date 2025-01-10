@@ -1,28 +1,27 @@
-import abc
+from abc import ABC, abstractmethod
 
 
-class Conta(abc.ABC):
-    def __init__(self, agencia, num_conta, saldo):
+class Conta(ABC):
+    def __init__(self, agencia, conta, saldo):
         
         self.agencia = agencia
-        self.num_conta = num_conta
+        self.conta = conta
         self.saldo = saldo
         
         print(f'AGÊNCIA: {self.agencia}\n'
-              f'NÚMERO DA CONTA: {self.num_conta}\n'
+              f'NÚMERO DA CONTA: {self.conta}\n'
               f'SALDO: R$ {self.saldo:.2f}\n')
 
+    @abstractmethod
+    def sacar(self, valor): ...
+    
+    def depositar(self, valor):
+        self.saldo += valor
+        self.detalhes(f'Deposito de R$ {valor:.2f} concluído.\n')
         
     def detalhes(self, msg=''):
         print(f'{msg}O seu saldo atual é de: R$ {self.saldo:.2f}.\n')
         
-    def depositar(self, valor):
-        self.saldo += valor
-        self.detalhes(f'Deposito de R$ {valor:.2f} concluído.\n')
-
-    @abc.abstractmethod
-    def sacar(self, valor): ...
-    
 
 class ContaCorrente(Conta):
     LIMITE_EXTRA = 200
@@ -55,26 +54,17 @@ class ContaCorrente(Conta):
 
 class ContaPoupanca(Conta):
     def sacar(self, valor):
-        saldo_atual = self.saldo
         self.detalhes(f'\nValor que você deseja sacar R$ {valor:.2f}\n')
          
-        if valor <= self.saldo:
-            self.saldo -= valor
+        if valor <= self.saldo and valor > 0:
+            saldo_atual = self.saldo
+            self.saldo -= valor 
              
-            return self.detalhes(f'Você retirou R$ {valor:.2f} '
-                                  f'de R$ {saldo_atual:.2f}\n'
-                                  f'Saque concluido com sucesso. \n')
+            self.detalhes(f'Você retirou R$ {valor:.2f} '
+                          f'de R$ {saldo_atual:.2f}\n'
+                          f'Saque concluido com sucesso. \n')
+            return self.saldo
         
-        return f'Você não possui saldo suficiente.'
+        print('Não foi possuível efetuar o saque.')
+        
              
-
-pessoa_0 = ContaCorrente(1, 10, 500)
-pessoa_1 = ContaPoupanca(2, 20, 200)
-
-pessoa_0.depositar(500)
-pessoa_1.depositar(200)
-
-print(pessoa_0.sacar(1000))
-print(pessoa_1.sacar(400))
-
-
