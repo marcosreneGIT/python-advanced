@@ -16,38 +16,46 @@ class Conta(ABC):
     def sacar(self, valor): ...
     
     def depositar(self, valor):
-        self.saldo += valor
-        self.detalhes(f'Deposito de R$ {valor:.2f} concluído.\n')
+        if valor > 0:
+            self.saldo += valor
+            self.detalhes(f'Deposito de R$ {valor:.2f} concluído.\n')
+            return self.saldo
+        print('Não é possível depositar valores nulos.\n')
         
     def detalhes(self, msg=''):
         print(f'{msg}O seu saldo atual é de: R$ {self.saldo:.2f}.\n')
         
 
 class ContaCorrente(Conta):
-    LIMITE_EXTRA = 200
-    
+    def __init__(self, agencia, conta, saldo, limite_extra=0):
+        super().__init__(agencia, conta, saldo)
+        
+        self.limite_extra = limite_extra
+            
     def sacar(self, valor):
         self.detalhes(f'Valor que você deseja sacar R$ {valor:.2f}\n'
-                      f'Você possui R$ {self.LIMITE_EXTRA:.2f} '
+                      f'Você possui R$ {self.limite_extra:.2f} '
                       'de limite extra.\n')
         
-        if valor <= (self.saldo + self.LIMITE_EXTRA):
+        if valor <= (self.saldo + self.limite_extra) and valor > 0:
             saldo_atual = self.saldo
             
             if valor > self.saldo:
                 limite_ultizado = valor - self.saldo
                 self.saldo = 0
                 
-                return self.detalhes(f'Você retirou R$ {valor:.2f} de '
-                                     f'R$ {saldo_atual:.2f}\n'
-                                     'Você utilizou seu limite extra de '
-                                     f'{limite_ultizado:.2f}.\n'
-                                     'Saque concluido com sucesso.\n')
-            else:
-                self.saldo -= valor
-                return self.detalhes(f'Você retirou R$ {valor:.2f} de ' 
-                                     f'R$ {saldo_atual:.2f}\n'
-                                     'Saque concluido com sucesso. \n')
+                self.detalhes(f'Você retirou R$ {valor:.2f} de '
+                              f'R$ {saldo_atual:.2f}\n'
+                              'Você utilizou seu limite extra de '
+                              f'{limite_ultizado:.2f}.\n'
+                              'Saque concluido com sucesso.\n')
+                return self.saldo
+            
+            self.saldo -= valor
+            self.detalhes(f'Você retirou R$ {valor:.2f} de ' 
+                          f'R$ {saldo_atual:.2f}\n'
+                           'Saque concluido com sucesso. \n')
+            return self.saldo
         
         print('Não foi possível efetuar o saque.')
                 
@@ -67,4 +75,8 @@ class ContaPoupanca(Conta):
         
         print('Não foi possível efetuar o saque.')
         
-             
+
+conta_corrente = ContaCorrente(1, 10, 500, 200)
+
+conta_corrente.depositar(300)
+conta_corrente.sacar(1000)
