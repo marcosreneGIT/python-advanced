@@ -57,12 +57,12 @@ class ContaCorrente(Conta):
                            'Saque concluido com sucesso. \n')
             return self.saldo
         
-        print('Não foi possível efetuar o saque.')
+        print('Não foi possível efetuar o saque.\n')
                 
 
 class ContaPoupanca(Conta):
     def sacar(self, valor):
-        self.detalhes(f'\nValor que você deseja sacar R$ {valor:.2f}\n')
+        self.detalhes(f'Valor que você deseja sacar R$ {valor:.2f}\n')
          
         if valor <= self.saldo and valor > 0:
             saldo_atual = self.saldo
@@ -73,10 +73,18 @@ class ContaPoupanca(Conta):
                           f'Saque concluido com sucesso. \n')
             return self.saldo
         
-        print('Não foi possível efetuar o saque.')
+        print('Não foi possível efetuar o saque.\n')
         
 
-conta_corrente = ContaCorrente(1, 10, 500, 200)
-
-conta_corrente.depositar(300)
-conta_corrente.sacar(1000)
+if __name__ == '__main__':
+    conta_corrente = ContaCorrente(1, 10, 1000, 100)
+    
+    conta_corrente.depositar(100)
+    conta_corrente.sacar(600)
+    
+    
+    conta_poupanca = ContaPoupanca(2, 20, 2000) 
+    
+    conta_poupanca.depositar(200)
+    conta_poupanca.sacar(700)
+       
