@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Conta(ABC):
-    def __init__(self, agencia, conta, saldo):
+    def __init__(self, agencia: int, conta: int, saldo: float = 0) -> None: 
         
         self.agencia = agencia
         self.conta = conta
@@ -13,26 +13,26 @@ class Conta(ABC):
               f'SALDO: R$ {self.saldo:.2f}\n')
 
     @abstractmethod
-    def sacar(self, valor): ...
+    def sacar(self, valor: float) -> float: ...
     
-    def depositar(self, valor):
+    def depositar(self, valor: float) -> float:
         if valor > 0:
             self.saldo += valor
             self.detalhes(f'Deposito de R$ {valor:.2f} concluído.\n')
             return self.saldo
         print('Não é possível depositar valores nulos.\n')
         
-    def detalhes(self, msg=''):
+    def detalhes(self, msg: str ='') -> None:
         print(f'{msg}O seu saldo atual é de: R$ {self.saldo:.2f}.\n')
         
 
 class ContaCorrente(Conta):
-    def __init__(self, agencia, conta, saldo, limite_extra=0):
+    def __init__(self, agencia, conta, saldo, limite_extra: float = 0):
         super().__init__(agencia, conta, saldo)
         
         self.limite_extra = limite_extra
             
-    def sacar(self, valor):
+    def sacar(self, valor: float) -> float:
         self.detalhes(f'Valor que você deseja sacar R$ {valor:.2f}\n'
                       f'Você possui R$ {self.limite_extra:.2f} '
                       'de limite extra.\n')
@@ -61,7 +61,7 @@ class ContaCorrente(Conta):
                 
 
 class ContaPoupanca(Conta):
-    def sacar(self, valor):
+    def sacar(self, valor: float) -> float:
         self.detalhes(f'Valor que você deseja sacar R$ {valor:.2f}\n')
          
         if valor <= self.saldo and valor > 0:
