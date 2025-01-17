@@ -10,7 +10,7 @@ Conta(ABC)
     ContaCorrente 
     ContaPoupanca
     
-Pessoa(ABC)
+Pessoa
     Cliente 
         Cliente > Conta
         
