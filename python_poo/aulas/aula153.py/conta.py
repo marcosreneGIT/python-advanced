@@ -15,7 +15,7 @@ class Conta(ABC):
     @abstractmethod
     def sacar(self, valor: float) -> float: ...
     
-    def depositar(self, valor: float) -> float:
+    def depositar(self, valor: float) -> float | None:
         if valor > 0:
             self.saldo += valor
             self.detalhes(f'Deposito de R$ {valor:.2f} concluído.\n')
@@ -32,7 +32,7 @@ class ContaCorrente(Conta):
         
         self.limite_extra = limite_extra
             
-    def sacar(self, valor: float) -> float:
+    def sacar(self, valor: float) -> float | None:
         self.detalhes(f'Valor que você deseja sacar R$ {valor:.2f}\n'
                       f'Você possui R$ {self.limite_extra:.2f} '
                       'de limite extra.\n')
@@ -61,7 +61,7 @@ class ContaCorrente(Conta):
                 
 
 class ContaPoupanca(Conta):
-    def sacar(self, valor: float) -> float:
+    def sacar(self, valor: float) -> float | None:
         self.detalhes(f'Valor que você deseja sacar R$ {valor:.2f}\n')
          
         if valor <= self.saldo and valor > 0:
