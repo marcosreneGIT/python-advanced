@@ -22,8 +22,7 @@ class Pessoa:
         self._idade = idade
         
     def __repr__(self):
-        class_name = type(self).__name__
-        return f'{class_name}: ({self.nome!r}, {self.idade!r})'
+        return f'({self.nome!r}, {self.idade!r})'
     
     
 class Cliente(Pessoa):
