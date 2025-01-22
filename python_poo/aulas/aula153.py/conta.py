@@ -8,10 +8,7 @@ class Conta(ABC):
         self.conta = conta
         self.saldo = saldo
         
-        print(f'AGÊNCIA: {self.agencia}\n'
-              f'NÚMERO DA CONTA: {self.conta}\n'
-              f'SALDO: R$ {self.saldo:.2f}\n')
-
+       
     @abstractmethod
     def sacar(self, valor: float) -> float: ...
     
@@ -24,7 +21,10 @@ class Conta(ABC):
         
     def detalhes(self, msg: str ='') -> None:
         print(f'{msg}O seu saldo atual é de: R$ {self.saldo:.2f}.\n')
-        
+    
+    def __repr__(self):
+         return f'({self.agencia!r}, {self.conta!r}, {self.saldo!r})'
+
 
 class ContaCorrente(Conta):
     def __init__(self, agencia, conta, saldo, limite_extra: float = 0):
