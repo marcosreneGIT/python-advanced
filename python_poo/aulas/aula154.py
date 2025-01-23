@@ -6,7 +6,7 @@
 
 # # doc: https://docs.python.org/3/library/dataclasses.html
 
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict, astuple
 
 @dataclass(init=False) # possíbilidade de criar meu próprio __init__ 
 class Pessoa:
@@ -31,3 +31,4 @@ if __name__ == '__main__':
     
     print(pessoa_0.nome)
     print(pessoa_0._idade == pessoa_1._idade)
+    print(asdict(pessoa_1))
