@@ -55,10 +55,10 @@ class Banco:
         print(f"\n{'CONTA CLIENTE':<15}:", end=' ')
         
         if conta is cliente.conta:
-            print('CONFIRMADO.')
+            print('CONFIRMADO.\n')
             return True
 
-        print('NEGADO.')
+        print('NEGADO.\n')
         return False
         
     def autenticar(self, cliente: pessoa.Cliente, conta: conta.Conta) -> bool:

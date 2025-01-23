@@ -36,7 +36,7 @@ class ContaCorrente(Conta):
             
     def sacar(self, valor: float) -> float | None:
         
-        self.detalhes(f'Valor que você deseja sacar R$ {valor:.2f}\n'
+        self.detalhes(f'Valor que você deseja sacar R$ {valor:.2f}.\n'
                       f'Você possui R$ {self.limite_extra:.2f} '
                       'de limite extra.\n')
         
@@ -48,10 +48,12 @@ class ContaCorrente(Conta):
                 self.saldo = 0
                 
                 self.detalhes(f'Você retirou R$ {valor:.2f} de '
-                              f'R$ {saldo_atual:.2f}\n'
-                              'Você utilizou seu limite extra de '
-                              f'{limite_ultizado:.2f}.\n'
+                              f'R$ {saldo_atual:.2f}.\n'
+                              'Você utilizou seu limite extra.\n'
+                              'Você possui uma divída de'
+                              f' -R$ {limite_ultizado:.2f}.\n'
                               'Saque concluido com sucesso.\n')
+                
                 return self.saldo
             
             self.saldo -= valor
