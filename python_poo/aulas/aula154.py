@@ -10,12 +10,17 @@ from dataclasses import dataclass
 
 @dataclass
 class Pessoa:
-    nome: str
-    idade: int
+    _nome: str
+    _idade: int
+    
+    @property
+    def nome(self):
+        return self._nome
+    
     
 if __name__ == '__main__':
     pessoa_0 = Pessoa('Renê', 21)
     pessoa_1 = Pessoa('Marcos', 21)
     
-    
-    print(pessoa_0.idade == pessoa_1.idade)
+    print(pessoa_0.nome)
+    print(pessoa_0._idade == pessoa_1._idade)
