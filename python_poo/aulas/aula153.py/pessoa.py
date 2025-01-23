@@ -22,12 +22,14 @@ class Pessoa:
         self._idade = idade
         
     def __repr__(self):
+        
         return f'({self.nome!r}, {self.idade!r})'
     
     
 class Cliente(Pessoa):
     def __init__(self, nome: str, idade: int) -> None:
         super().__init__(nome, idade)
+        
         self.conta: conta.Conta | None = None
         
         

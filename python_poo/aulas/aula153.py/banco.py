@@ -13,9 +13,11 @@ class Banco:
        self.contas = contas or []
        
     def _checar_agencia(self, conta: conta.Conta) -> bool:
+        
         print(f"{'AGÊNCIA':<15}:", end=' ')
         
         if conta.agencia in self.agencias:
+            
             print('CONFIRMADO.')
             return True
         
@@ -23,9 +25,11 @@ class Banco:
         return False
     
     def _checar_cliente(self, cliente: pessoa.Cliente) -> bool:
+        
         print(f"{'CLIENTE':<15}:", end=' ')
         
         if cliente in self.clientes:
+            
             print('CONFIRMADO.')
             return True
         
@@ -33,9 +37,11 @@ class Banco:
         return False  
     
     def _checar_conta(self, conta: conta.Conta) -> bool:
+        
         print(f"{'CONTA':15}:", end=' ')
         
         if conta in self.contas:
+            
             print('CONFIRMADO.')      
             return True
         
