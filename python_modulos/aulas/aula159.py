@@ -3,7 +3,7 @@
 # datatime(ano, mês, dia)
 # datatime(ano, mês, dia, horas, minutos, segundos, microsegundos)
 
-# datatime.striptime('DATA', 'FORMATO')
+# datatime.strptime('DATA', 'FORMATO')
 
 # datatime.now()
 
@@ -16,9 +16,9 @@
 
 from datetime import datetime
 
+
 data = datetime(2025, 1, 27) # padrão EUA
 print(data)
-from datetime import datetime
 
 data_str = '27 01 2025 08 35' 
 data_formato = '%d %m %Y %H %M' # seguir o mesmo padrão de 'data_str' 
