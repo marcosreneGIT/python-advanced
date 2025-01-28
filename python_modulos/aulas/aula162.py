@@ -10,5 +10,4 @@ data = datetime.now()
 data_fmt = data.strftime('%d/%m/%Y %H:%M:%S')
 
 print(data_fmt) #class str
-
-print(data.strftime('%Y'), data.year)
+print(data.strftime('%Y'), data.year) # str | int
