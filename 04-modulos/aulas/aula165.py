@@ -19,3 +19,4 @@ import os
 
 os.system('echo "Hello World"') # 'echo' é um comando de prompt = print
                                 # O Python apenas repassa o comando para o OS
+                                
