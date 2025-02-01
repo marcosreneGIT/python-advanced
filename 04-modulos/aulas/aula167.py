@@ -9,6 +9,8 @@ import os
 caminho = os.path.join('/Users', 'marco', 'Documents', 'Estudos', 'back-end', 
                        'python_2', 'testes', 'caminho')
 
+print(os.listdir(caminho),'\n') # arquivos no diretorio 'caminho'
+
 for pastas in os.listdir(caminho): 
     caminho_pasta = os.path.join(caminho, pastas)
     print(pastas)
@@ -19,3 +21,4 @@ for pastas in os.listdir(caminho):
     for arquivos in os.listdir(caminho_pasta):
         print(' ', arquivos) # para percorrer camadas de diretorios a melhor 
                              # opção é o os.walk. 
+                             
