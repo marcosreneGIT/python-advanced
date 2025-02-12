@@ -10,7 +10,7 @@ caminho_subpasta.mkdir(exist_ok=True) # criando outro diretorio #dentro do anter
 
 caminho_subpasta_arquivo.touch(exist_ok=True) # criando um arquivo dentro da subpasta
 
-def rmtree(root: Path, remove_root=True):
+def rmtree(root: Path, remove_root=True): # remoção de forma recursiva
     for file in root.glob('*'):
         if file.is_dir():
             print(f'Dir: {file}')
@@ -18,7 +18,7 @@ def rmtree(root: Path, remove_root=True):
             file.rmdir()
         else:
             print(f'File: {file}')
-            file.unlink
+            file.unlink()
         
     if remove_root:
         root.rmdir()
