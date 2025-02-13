@@ -27,4 +27,3 @@ for root, dirs, files in os.walk(PASTA):
 
         shutil.copy(caminho_arquivo, novo_caminho_arquivo)
         
-        
