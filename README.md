@@ -1,7 +1,7 @@
 # **Python 3 Completo: PySide6, Django, Selenium, Regexp, Testes, TDD, POO, Design Patterns GoF**  
 
 ## **Conteúdo do Curso**  
- **Python 3 básico**: Com lógica de programação  
+- **Python 3 básico**: Com lógica de programação  
 - **Python 3 intermediário**: Com programação procedural e funcional  
 - **Python 3 avançado**: Com programação orientada a objetos  
 - **Módulos do Python**: Como PySide6 para Interface Gráfica com Qt 6, Selenium, Django e muito mais  
