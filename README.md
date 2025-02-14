@@ -1,7 +1,7 @@
 # **Python 3 Completo: PySide6, Django, Selenium, Regexp, Testes, TDD, POO, Design Patterns GoF**
 
 ## **Conteúdo do Curso**  
-Este curso oferece um aprendizado abrangente e prático de Python, abrangendo conceitos e ferramentas desde o básico até o avançado. O que você aprenderá:
+Este curso oferece um aprendizado abrangente e prático de Python, abrangendo conceitos e ferramentas desde o básico até o avançado. 
 
 - **Python 3 Básico**: Fundamentos da linguagem e lógica de programação
 - **Python 3 Intermediário**: Programação procedural e funcional
