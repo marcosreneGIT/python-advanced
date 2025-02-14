@@ -21,4 +21,5 @@ Este curso oferece um aprendizado abrangente e prático de Python, abrangendo co
 - **Plataforma**: Udemy
 - **Professor**: Luiz Miranda
 - **Duração**: Aproximadamente 141 horas de conteúdo, cobrindo uma variedade de tópicos e práticas.
+- **Conclusão**: Em andamento 
 
