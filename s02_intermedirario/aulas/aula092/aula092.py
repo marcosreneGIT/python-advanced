@@ -4,7 +4,7 @@
 print('Este módulo se chama', __name__)
 
 # você pode importar outro módulo inteiro ou parte do módulo
-import python_intermedirario.aulas.aula092.modulo092 as modulo092
+import python-advanced.02-intermedirario.aulas.aula093.aula093.py as modulo092
 
 # o python conhece a pasta onde o __main__ está e as pastas abaixo dele.
 # ele não reconhece pastas e módulos acima do __main__ por padrão

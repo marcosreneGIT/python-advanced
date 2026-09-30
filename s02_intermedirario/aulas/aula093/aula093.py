@@ -1,4 +1,4 @@
-import python_intermedirario.aulas.aula093.modulo093 as modulo093
+import python_"02-intermedirario.aulas.aula093.modulo093" as modulo093
 
 
 print(modulo093.soma(2, 3))
