@@ -1,2 +1,2 @@
-from aula095_p.modulo import *
-from aula095_p.modulo_b import *
+from modulo import *
+from modulo_b import *

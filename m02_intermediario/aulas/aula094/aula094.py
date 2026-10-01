@@ -1,6 +1,6 @@
 import importlib
 
-import python_intermedirario.aulas.aula094.modulo094 as modulo094
+import modulo094 as modulo094
 
 print(modulo094.variavel)
 
