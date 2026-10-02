@@ -27,7 +27,7 @@
 # json.dump - gera um arquivo json
 # json.load - carrega um arquivo json
 
-caminho = 'C:\\Users\\marco\\Documents\Estudos\python_2\\caminho\\' # utilizar sempre duas barras (\\) para evitar erros.
+caminho = 'c:\\Users\\Marcos Renê\\OneDrive\\Documentos\\Estudos\\GitHub\\python_advanced\\testes\\caminho\\' # utilizar sempre duas barras (\\) para evitar erros.
 caminho += 'aula109.py'
 
 # arquivo = open(caminho, 'w')
