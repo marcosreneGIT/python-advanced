@@ -1,5 +1,5 @@
 # os.stat (dados) e os.getsize (tamanho)  
-# o retorno dos dados relacionados a tamanho são em bytes
+# o retorno dos dados relacionados a tamanho são em bytes 
 
 # https://stackoverflow.com/questions/5194057/better-way-to-convert-file-sizes-in-python
 
@@ -39,8 +39,7 @@ def formatar_bytes(tamanho_bytes: int, base = 1024) -> str:
 
 
 c = count()
-caminho = os.path.join('/Users', 'marco', 'Documents', 'Estudos', 'back-end', 
-                       'python_2', '03-poo')
+caminho = 'C:\\Users\\Marcos Renê\\OneDrive\\Documentos\\Jogos\\The Legend of Zelda Ocarina of Time'
 
 for root, dirs, files in os.walk(caminho):
     contador = next(c)

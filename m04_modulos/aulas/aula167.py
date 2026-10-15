@@ -6,8 +6,10 @@ import os
 
 
 # C:\Users\marco\Documents\Estudos\back-end\python_2\testes\caminho
-caminho = os.path.join('/Users', 'marco', 'Documents', 'Estudos', 'back-end', 
-                       'python_2', 'testes', 'caminho')
+# caminho = os.path.join('/Users', 'marco', 'Documents', 'Estudos', 'back-end', 
+#                        'python_2', 'testes', 'caminho')
+
+caminho = os.path.abspath('.') # caminho atual
 
 print(os.listdir(caminho),'\n') # arquivos no diretorio 'caminho'
 

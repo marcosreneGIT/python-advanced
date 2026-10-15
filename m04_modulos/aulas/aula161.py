@@ -22,9 +22,9 @@ for data in datas:
     print(data)
 
 
-from dateutil.relativedelta import relativedelta
+# from dateutil.relativedelta import relativedelta
 
-relativedelta_total = relativedelta(data_f, data_i)
+# relativedelta_total = relativedelta(data_f, data_i)
 
-print(relativedelta_total.years)
-print(data_i + relativedelta(years=data_f.year))
+# print(relativedelta_total.years)
+# print(data_i + relativedelta(years=data_f.year))
